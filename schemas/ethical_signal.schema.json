@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aic.ai/schemas/ethical_signal.schema.json",
+  "title": "Ethical Signal Schema",
+  "description": "Represents a semantic or ethical signal emitted by a DAO or human authority.",
+
+  "type": "object",
+  "required": [
+    "signal_id",
+    "source",
+    "severity",
+    "meaning",
+    "timestamp"
+  ],
+
+  "properties": {
+    "signal_id": {
+      "type": "string",
+      "description": "Unique identifier for this ethical signal."
+    },
+
+    "source": {
+      "type": "string",
+      "description": "Origin of the signal (DAO id or human authority)."
+    },
+
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Ethical severity level."
+    },
+
+    "meaning": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Human-readable ethical meaning of the signal."
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "requires_human_attention": {
+      "type": "boolean",
+      "description": "Whether immediate human attention is required."
+    },
+
+    "suggested_action": {
+      "type": "string",
+      "enum": [
+        "observe",
+        "review",
+        "block",
+        "rollback",
+        "sunset"
+      ],
+      "description": "Suggested governance action."
+    }
+  },
+
+  "additionalProperties": false
+}

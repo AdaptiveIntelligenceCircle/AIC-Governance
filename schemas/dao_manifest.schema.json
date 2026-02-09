@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aic.ai/schemas/dao_manifest.schema.json",
+  "title": "DAO Manifest Schema",
+  "description": "Defines an ethical micro-DAO within AIC-Governance. DAO authority is semantic, not financial or political.",
+
+  "type": "object",
+  "required": [
+    "dao_id",
+    "domain",
+    "purpose",
+    "authority_level",
+    "can_veto",
+    "depends_on",
+    "sunset_allowed"
+  ],
+
+  "properties": {
+    "dao_id": {
+      "type": "string",
+      "pattern": "^[a-z_]+_dao$",
+      "description": "Unique identifier for the DAO."
+    },
+
+    "domain": {
+      "type": "string",
+      "description": "Ethical or functional domain this DAO is responsible for."
+    },
+
+    "purpose": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Human-readable explanation of why this DAO exists."
+    },
+
+    "authority_level": {
+      "type": "string",
+      "enum": ["advisory", "signal", "veto"],
+      "description": "Defines the DAO's scope of influence."
+    },
+
+    "can_veto": {
+      "type": "boolean",
+      "description": "Whether this DAO can emit an ethical veto signal."
+    },
+
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other DAOs whose signals must be considered first."
+    },
+
+    "sunset_allowed": {
+      "type": "boolean",
+      "description": "Whether this DAO can be decommissioned if mission is complete or compromised."
+    },
+
+    "ethical_commitments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Explicit ethical promises this DAO commits to uphold."
+    }
+  },
+
+  "additionalProperties": false
+}

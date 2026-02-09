@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aic.ai/schemas/decision_record.schema.json",
+  "title": "Decision Record Schema",
+  "description": "Immutable record of a governance decision, used for audit, replay, and ethical memory.",
+
+  "type": "object",
+  "required": [
+    "decision_id",
+    "timestamp",
+    "domain",
+    "decision_outcome",
+    "dao_signals",
+    "human_review_required"
+  ],
+
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "description": "Unique identifier for the decision."
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of the decision."
+    },
+
+    "domain": {
+      "type": "string",
+      "description": "Domain affected by the decision."
+    },
+
+    "decision_outcome": {
+      "type": "string",
+      "enum": ["ALLOW", "BLOCK", "ALLOW_WITH_CONSTRAINTS"],
+      "description": "Final governance outcome."
+    },
+
+    "dao_signals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dao_signal"
+      }
+    },
+
+    "human_review_required": {
+      "type": "boolean",
+      "description": "Whether human oversight was required or invoked."
+    },
+
+    "ethical_reasoning": {
+      "type": "string",
+      "description": "Optional explanation of ethical considerations."
+    },
+
+    "sunset_recommended": {
+      "type": "boolean",
+      "description": "Whether this decision recommends future decommissioning."
+    }
+  },
+
+  "$defs": {
+    "dao_signal": {
+      "type": "object",
+      "required": ["dao_id", "signal_type"],
+      "properties": {
+        "dao_id": {
+          "type": "string"
+        },
+        "signal_type": {
+          "type": "string",
+          "enum": [
+            "INFO",
+            "WARNING",
+            "ETHICAL_VETO",
+            "HUMAN_OVERRIDE"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "additionalProperties": false
+}
