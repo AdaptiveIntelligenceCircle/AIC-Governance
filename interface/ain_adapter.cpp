@@ -3,7 +3,7 @@ using namespace std;
 
 #include <iostream>
 
-namespace aic :: interface 
+namespace aic 
 {
     void AINAdapter::broadcastDecision(const string& decision_id) 
     {

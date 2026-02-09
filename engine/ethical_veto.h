@@ -2,7 +2,7 @@
 #include "decision_context.h"
 using namespace std ; 
 
-namespace aic :: engine 
+namespace aic  
 {
     class EthicalVeto
     {

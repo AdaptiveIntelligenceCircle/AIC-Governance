@@ -1,7 +1,7 @@
 #include "governance_engine.h"
 using namespace std; 
 
-namespace aic :: engine 
+namespace aic
 {
     DecisionType GovernanceEngine :: evaluate(const DecisionContext &ctx)
     {

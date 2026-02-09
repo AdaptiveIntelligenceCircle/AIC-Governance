@@ -4,7 +4,7 @@
 #include <vector> 
 using namespace std; 
 
-namespace aic :: engine 
+namespace aic 
 {
     enum class DecisionType 
     {

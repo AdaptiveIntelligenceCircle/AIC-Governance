@@ -2,7 +2,7 @@
 #include <string>
 using namespace std; 
 
-namespace aic :: interface 
+namespace aic 
 {
     class AINAdapter
     {

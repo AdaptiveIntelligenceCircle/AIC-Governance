@@ -4,7 +4,7 @@
 #include "ethical_veto.h"
 using namespace std; 
 
-namespace aic :: engine 
+namespace aic
 {
     class GovernanceEngine 
     {

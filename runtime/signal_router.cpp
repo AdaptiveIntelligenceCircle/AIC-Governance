@@ -4,7 +4,7 @@ using namespace std;
 #include <vector> 
 #include <string> 
 
-namespace aic :: runtime 
+namespace aic
 {
     vector<string> routeSignals(const vector<string> &raw)
     {

@@ -3,7 +3,7 @@ using namespace std;
 
 #include <iostream>
 
-namespace aic :: interface 
+namespace aic 
 {
     void HMNAdapter :: recordMeaning(const string &narrative)
     {

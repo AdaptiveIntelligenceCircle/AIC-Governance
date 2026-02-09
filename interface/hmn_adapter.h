@@ -4,7 +4,7 @@ using namespace std;
 #include <iostream>
 #include <string> 
 
-namespace aic :: interface 
+namespace aic 
 {
     class HMNAdapter 
     {

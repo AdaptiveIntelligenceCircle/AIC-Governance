@@ -1,7 +1,7 @@
 #include "ethical_veto.h"
 using namespace std; 
 
-namespace aic :: engine 
+namespace aic
 {
     bool EthicalVeto :: triggered (const DecisionContext &ctx) const 
     {
