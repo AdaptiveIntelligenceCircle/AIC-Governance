@@ -84,13 +84,11 @@ The inability to stop is a critical ethical defect.
 Governance is not external oversight.
 It is a core component.
 
-A system that functions only when governance is ignored
-must not function at all.
+A system that functions only when governance is ignored must not function at all.
 
 ---
 
 ## Final Assertion
 
-> Any future version of AIC that violates these principles
-> is no longer AIC,
+> Any future version of AIC that violates these principles is no longer AIC,
 > regardless of name, lineage, or technical similarity.
